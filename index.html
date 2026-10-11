@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F6F1F8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F1020" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Dear Ted</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;600&display=swap" rel="stylesheet" />
+    <!-- Sets the saved theme before React loads, so the page never flashes the wrong colours -->
+    <script>
+      try {
+        var d = JSON.parse(localStorage.getItem('dearTed:v1') || '{}');
+        var t = (d.settings && d.settings.theme) || 'cream';
+        if (t === 'system') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'cream';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body>
+</html>
